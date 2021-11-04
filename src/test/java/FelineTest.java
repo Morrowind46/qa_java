@@ -1,15 +1,8 @@
 import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
-
-import static org.mockito.Mockito.spy;
-
-@RunWith(MockitoJUnitRunner.class)
 
 public class FelineTest {
 
@@ -31,19 +24,15 @@ public class FelineTest {
 
     @Test
     public void getKittensReturnKittensCount() {
-        Feline feline = spy(new Feline());
-        int expectedKittensCount = 1;
-        Mockito.when (feline.getKittens(1)).thenReturn(1);
+        Feline feline = new Feline();
         int actualKittensCount = feline.getKittens ();
-        Assert.assertEquals(expectedKittensCount, actualKittensCount);
+        Assert.assertEquals(1, actualKittensCount);
     }
 
     @Test
     public void getKittensTestMethodWithoutParameters() {
 
         Feline feline = new Feline();
-        int expectedKittensCount = 1;
-        int actualKittensCount = feline.getKittens(1);
-        Assert.assertEquals(expectedKittensCount, actualKittensCount);
+        Assert.assertEquals(1, feline.getKittens(1));
     }
 }
