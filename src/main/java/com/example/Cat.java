@@ -16,6 +16,8 @@ public class Cat {
 
     public List<String> getFood() throws Exception {
         return predator.eatMeat();
+        //проверить, что тест упал можно изменив на
+        //return List.of("нет тут еды");
     }
 
 }
